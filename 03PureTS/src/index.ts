@@ -23,6 +23,10 @@
 
 //less clumsy code
 class User {
+
+    private _courseCount=1 
+
+
     readonly city:string ="delhi"
     constructor(
         public email:string,
@@ -31,5 +35,36 @@ class User {
     ){
 
     }
+
+
+    private  deleteToken(){
+        console.log("delete token")
+    }
+    
+    get deletedtoken():string{
+        this.deleteToken()
+        return "token deleted"
+    }
+    
+    
+
+     get getAppleEmail():string{
+       return `apple${this.email}` 
+    }
+
+    get courseCount():number{
+        return this._courseCount;
+    }
+
+    set courseCount(courseNum){
+        // a setter cannot have a type annotation for its return type
+        if(courseNum<=1){
+            throw new Error("course count should be more than one ")
+        }
+
+        this._courseCount= courseNum
+    }
 }
 const yogi=new User("h.com","fds",23)
+
+console.log(yogi.deletedtoken)

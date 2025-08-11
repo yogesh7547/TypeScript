@@ -29,7 +29,13 @@ class User {
         this.name = name;
         this.userId = userId;
     }
+
+   
 }
+
+
+
+
 const yogi = new User("h.com", "fds", 23);
 export {};
 //# sourceMappingURL=index.js.map
