@@ -24,7 +24,7 @@
 //less clumsy code
 class User {
 
-    private _courseCount=1 
+    protected _courseCount=1 
 
 
     readonly city:string ="delhi"
@@ -65,6 +65,24 @@ class User {
         this._courseCount= courseNum
     }
 }
+
+
+class subUser extends User{
+    isFamily:boolean=true
+    changeCourseCount(){
+        this._courseCount=4 // accessible bcoz of protected
+    }
+}
+    
+
 const yogi=new User("h.com","fds",23)
 
 console.log(yogi.deletedtoken)
+
+
+
+//public => accessible everywhere inside / outside / inheritance of the class
+
+//private => accessible only inside the parent class
+
+//protected => accessibe inside and in inheritance of class
